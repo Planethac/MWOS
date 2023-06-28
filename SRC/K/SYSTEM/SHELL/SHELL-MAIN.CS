@@ -12,7 +12,7 @@ namespace quantumnt
             {
                 Console.Write("QUANTUMNT> ");
                 string Command = Console.ReadLine();
-                string[] SystemCommand = { "help" };
+                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown" };
 
                 if(SystemCommand.Contains(Command))
                 {
