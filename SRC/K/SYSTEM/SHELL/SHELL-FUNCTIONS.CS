@@ -8,6 +8,7 @@ namespace quantumnt
             if(command.ToLower() == "help") return 1;
             if(command.ToLower() == "vista-macbook") return 2;
             if(command.ToLower() == "shutdown" || command.ToLower() == "exit") return 3;
+            if(command.ToLower() == "ls") return 4;
 
             else return 0;
         }

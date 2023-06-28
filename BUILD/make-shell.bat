@@ -1,1 +1,1 @@
-csc /out:shell.exe /t:exe ..\src\k\system\shell\*.cs
+csc /out:shell.exe /t:exe ..\src\k\system\shell\SHELL.csproj
