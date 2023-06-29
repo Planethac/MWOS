@@ -1,7 +1,6 @@
-# MWOS
+### KOTL ENTERPRISE MWOS
 ## How to build
-Gurly pop we don't even have a kernel
-
+BITCHES WE HAVE A KRNL NOW, but we don't have a libc/.net =(
 ## Roadmap
 Pre-alpha: 
 
