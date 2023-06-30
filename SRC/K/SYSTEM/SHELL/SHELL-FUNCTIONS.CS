@@ -14,6 +14,7 @@ namespace quantumnt
             if(command.ToLower() == "vista-macbook") return 2;
             if(command.ToLower() == "shutdown" || command.ToLower() == "exit") return 3;
             if(command.ToLower() == "ls" || command.ToLower() == "dir") return 4;
+            if(command.ToLower() == "clear") return 5;
 
             else return 0;
         }
@@ -49,10 +50,21 @@ namespace quantumnt
         {
             try
             {
-                Process process = new Process();
-                process.StartInfo.FileName = command;
-                process.Start();
-                System.Console.WriteLine();
+                using (Process process = new Process())
+                {
+                    process.StartInfo.FileName = command;
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.RedirectStandardOutput = true;
+                    process.Start();
+
+                    StreamReader reader = process.StandardOutput;
+                    string output = reader.ReadToEnd();
+
+                    Console.WriteLine(output);
+
+                    process.WaitForExit();
+                }
+
             } catch (System.InvalidOperationException) {
                 return;
             } catch (System.ComponentModel.Win32Exception) {

@@ -7,14 +7,14 @@ namespace quantumnt
         public static void Main()
         {
             System.Console.WriteLine("QUANTUMNT VER 0.0.1");
-            System.Console.WriteLine("© KOTL");
+            System.Console.WriteLine("© BigPO, Planethac");
             while (true)
             {
                 Console.Write("QUANTUMNT> ");
                 string Input = Console.ReadLine();
                 string[] param  = Input.Split(' ');
                 string Command = param[0];
-                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir" };
+                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear" };
 
                 if(SystemCommand.Contains(Command)) {
                     int CommandID = CommandDotCom.RunSysBin(Command);

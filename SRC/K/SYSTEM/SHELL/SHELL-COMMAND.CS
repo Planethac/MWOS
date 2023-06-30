@@ -16,6 +16,8 @@ namespace quantumnt
                 System.Environment.Exit(1);
             } else if (CommandID == 4) {
                 ReadFiles.Do(param);
+            } else if (CommandID == 5) {
+                System.Console.Clear();
             }
         }
     }
