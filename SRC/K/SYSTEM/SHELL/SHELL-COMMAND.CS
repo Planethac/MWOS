@@ -18,6 +18,8 @@ namespace quantumnt
                 ReadFiles.Do(param);
             } else if (CommandID == 5) {
                 System.Console.Clear();
+            } else if (CommandID == 6) {
+                ChangeDirectory.Do(param);
             }
         }
     }

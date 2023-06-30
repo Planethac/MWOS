@@ -15,6 +15,7 @@ namespace quantumnt
             if(command.ToLower() == "shutdown" || command.ToLower() == "exit") return 3;
             if(command.ToLower() == "ls" || command.ToLower() == "dir") return 4;
             if(command.ToLower() == "clear") return 5;
+            if(command.ToLower() == "cd") return 6;
 
             else return 0;
         }
@@ -25,6 +26,8 @@ namespace quantumnt
         {
             try
             {
+                if (path == "ls") path = ".";
+
                 string[] FilePath = Directory.GetFiles(path); 
                 string[] DirPath = Directory.GetDirectories(path); 
 
@@ -87,6 +90,21 @@ namespace quantumnt
                 Console.WriteLine(e.Data);
             }
         }
-
+    }
+    public static class ChangeDirectory
+    {
+        public static void Do(string path)
+        {
+            try
+            {
+                Directory.SetCurrentDirectory(path);
+                cmdshell.cpth = Directory.GetCurrentDirectory();
+            }
+            catch (System.IO.DirectoryNotFoundException)
+            {
+                System.Console.WriteLine("System.IO.DirectoryNotFoundException");
+                System.Console.WriteLine(path);
+            }
+        }
     }
 }

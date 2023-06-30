@@ -1,13 +1,18 @@
-using System.Linq;
 using System;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 namespace quantumnt 
 {
     public class cmdshell
     {
+
+        public static string exepth = System.Reflection.Assembly.GetExecutingAssembly().Location;
+        public static string cpth = System.IO.Path.GetDirectoryName(exepth);
         public static void Main()
         {
-            string exepth = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            string cpth = System.IO.Path.GetDirectoryName(exepth);
             System.Console.WriteLine("QUANTUMNT VER 0.0.1");
             System.Console.WriteLine("© BigPO, Planethac");
             while (true)
@@ -16,7 +21,7 @@ namespace quantumnt
                 string Input = Console.ReadLine();
                 string[] param  = Input.Split(' ');
                 string Command = param[0];
-                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear" };
+                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd" };
 
                 if(SystemCommand.Contains(Command)) {
                     int CommandID = CommandDotCom.RunSysBin(Command);
