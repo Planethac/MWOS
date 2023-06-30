@@ -16,8 +16,7 @@ namespace quantumnt
                 string Command = param[0];
                 string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir" };
 
-                if(SystemCommand.Contains(Command))
-                {
+                if(SystemCommand.Contains(Command)) {
                     int CommandID = CommandDotCom.RunSysBin(Command);
                     try
                     {
@@ -28,6 +27,8 @@ namespace quantumnt
                         
                         Functions.ExecuteSystemCommand(CommandID, param[0]);
                     }
+                } else {
+                    ExecuteBinary.Do(param[0]);
                 }
             }
         }

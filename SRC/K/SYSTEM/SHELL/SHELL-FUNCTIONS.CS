@@ -1,5 +1,9 @@
 using System;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 namespace quantumnt
 {
     public static class CommandDotCom
@@ -34,8 +38,25 @@ namespace quantumnt
             }
             catch (System.IO.IOException)
             {
-                
                 System.Console.WriteLine("System.IO.IOException");
+                System.Console.WriteLine();
+            }
+        }
+    }
+    public static class ExecuteBinary
+    {
+        public static void Do(string command)
+        {
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = command;
+                process.Start();
+                System.Console.WriteLine();
+            } catch (System.InvalidOperationException) {
+                return;
+            } catch (System.ComponentModel.Win32Exception) {
+                System.Console.WriteLine("System.ComponentModel.Win32Exception");
                 System.Console.WriteLine();
             }
         }
