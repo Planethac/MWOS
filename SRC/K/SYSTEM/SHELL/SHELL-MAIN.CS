@@ -6,11 +6,13 @@ namespace quantumnt
     {
         public static void Main()
         {
+            string exepth = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string cpth = System.IO.Path.GetDirectoryName(exepth);
             System.Console.WriteLine("QUANTUMNT VER 0.0.1");
             System.Console.WriteLine("© BigPO, Planethac");
             while (true)
             {
-                Console.Write("QUANTUMNT> ");
+                Console.Write("{0}> ", cpth);
                 string Input = Console.ReadLine();
                 string[] param  = Input.Split(' ');
                 string Command = param[0];
