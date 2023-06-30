@@ -11,13 +11,15 @@ namespace quantumnt
             while (true)
             {
                 Console.Write("QUANTUMNT> ");
-                string Command = Console.ReadLine();
+                string Input = Console.ReadLine();
+                string[] param  = Input.Split(' ');
+                string Command = param[0];
                 string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls" };
 
                 if(SystemCommand.Contains(Command))
                 {
                     int CommandID = CommandDotCom.RunSysBin(Command);
-                    Functions.ExecuteSystemCommand(CommandID);
+                    Functions.ExecuteSystemCommand(CommandID, param[1]);
                 }
             }
         }

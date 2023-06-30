@@ -18,10 +18,19 @@ namespace quantumnt
     {
         public static void Do(string path)
         {
-            string[] FilePath = Directory.GetFiles(path);
-            foreach(string File in FilePath)
+            try
             {
-                System.Console.WriteLine(File);
+                string[] FilePath = Directory.GetFiles(path);   
+                foreach(string File in FilePath)
+                {
+                    System.Console.WriteLine(File);
+                }
+            }
+            catch (System.IO.IOException)
+            {
+                
+                System.Console.WriteLine("System.IO.IOException");
+                System.Console.WriteLine();
             }
         }
     }
