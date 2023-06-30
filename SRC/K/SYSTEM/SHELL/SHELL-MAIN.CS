@@ -19,7 +19,15 @@ namespace quantumnt
                 if(SystemCommand.Contains(Command))
                 {
                     int CommandID = CommandDotCom.RunSysBin(Command);
-                    Functions.ExecuteSystemCommand(CommandID, param[1]);
+                    try
+                    {
+                        Functions.ExecuteSystemCommand(CommandID, param[1]);
+                    }
+                    catch (System.IndexOutOfRangeException)
+                    {
+                        
+                        Functions.ExecuteSystemCommand(CommandID, param[0]);
+                    }
                 }
             }
         }
