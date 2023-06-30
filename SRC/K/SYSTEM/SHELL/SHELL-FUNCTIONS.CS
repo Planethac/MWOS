@@ -20,7 +20,13 @@ namespace quantumnt
         {
             try
             {
-                string[] FilePath = Directory.GetFiles(path);   
+                string[] FilePath = Directory.GetFiles(path); 
+                string[] DirPath = Directory.GetDirectories(path); 
+
+                foreach (string Dir in DirPath)
+                {
+                    System.Console.WriteLine(Dir);
+                }
                 foreach(string File in FilePath)
                 {
                     System.Console.WriteLine(File);
