@@ -15,7 +15,7 @@ namespace quantumnt
             } else if (CommandID == 3) {
                 System.Environment.Exit(1);
             } else if (CommandID == 4) {
-                RecursiveFileProcessor.Main(".")
+                ReadFiles.Do(@"C:\");
             }
         }
     }

@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 namespace quantumnt
 {
     public static class CommandDotCom
@@ -11,6 +12,17 @@ namespace quantumnt
             if(command.ToLower() == "ls") return 4;
 
             else return 0;
+        }
+    }
+    public static class ReadFiles
+    {
+        public static void Do(string path)
+        {
+            string[] FilePath = Directory.GetFiles(path);
+            foreach(string File in FilePath)
+            {
+                System.Console.WriteLine(File);
+            }
         }
     }
 }
