@@ -1,1 +1,0 @@
-csc /out:lib-shell.dll /t:library ..\src\k\system\shell\dll\*.cs

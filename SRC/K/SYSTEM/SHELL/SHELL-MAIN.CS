@@ -14,7 +14,7 @@ namespace quantumnt
                 string Input = Console.ReadLine();
                 string[] param  = Input.Split(' ');
                 string Command = param[0];
-                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls" };
+                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir" };
 
                 if(SystemCommand.Contains(Command))
                 {
