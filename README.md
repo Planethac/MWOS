@@ -1,6 +1,15 @@
-### KOTL ENTERPRISE MWOS
+### MWOS
 ## How to build
-BITCHES WE HAVE A KRNL NOW, but we don't have a libc/.net =(
+
+Easiest to Build on Ubuntu.
+
+Open the Terminal, and use "sudo apt install" to install following packages:
+
+- GCC
+- mtools
+- grub2-common
+- etc. (look in MWOS/SRC/kernel/docs/docs.md)
+
 ## Roadmap
 Pre-alpha: 
 
