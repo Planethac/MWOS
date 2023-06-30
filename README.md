@@ -1,4 +1,4 @@
-### KOTL ENTERPRISE MWOS
+### MWOS
 ## How to build
 
 Easiest to Build on Ubuntu.
