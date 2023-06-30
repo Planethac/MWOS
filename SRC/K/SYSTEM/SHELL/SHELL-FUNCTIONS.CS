@@ -50,21 +50,29 @@ namespace quantumnt
         {
             try
             {
-                using (Process process = new Process())
+                Process process = new Process();
+        
+
+                process.StartInfo.FileName = command;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.OutputDataReceived += Process_OutputDataReceived;
+                process.Start();
+                process.BeginOutputReadLine();
+                string input;
+                while ((input = Console.ReadLine()) != "exit")
                 {
-                    process.StartInfo.FileName = command;
-                    process.StartInfo.UseShellExecute = false;
-                    process.StartInfo.RedirectStandardOutput = true;
-                    process.Start();
-
-                    StreamReader reader = process.StandardOutput;
-                    string output = reader.ReadToEnd();
-
-                    Console.WriteLine(output);
-
-                    process.WaitForExit();
+                    process.StandardInput.WriteLine(input);
                 }
-
+                process.StandardInput.Close();
+                process.WaitForExit();
+                int exitCode = process.ExitCode;
+                process.Close();
+                
+                Console.WriteLine("Cmd process exited with code {0}.", exitCode);
+                System.Console.WriteLine();
+    
             } catch (System.InvalidOperationException) {
                 return;
             } catch (System.ComponentModel.Win32Exception) {
@@ -72,5 +80,13 @@ namespace quantumnt
                 System.Console.WriteLine();
             }
         }
+        static void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(e.Data))
+            {
+                Console.WriteLine(e.Data);
+            }
+        }
+
     }
 }
