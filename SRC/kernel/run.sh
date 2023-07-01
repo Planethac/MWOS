@@ -1,40 +1,31 @@
 clear
 
 #assemble boot.s file
-as --32 boot.s -o boot.o
+as --32 boot.s -o obj/boot.o
 
 #compile every .c file
 echo "Compiling C Files..."
-echo
-gcc -m32 -c kernel.c -o kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-gcc -m32 -c char.c -o char.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-gcc -m32 -c utils.c -o utils.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-echo
+gcc -m32 -c kernel.c -o obj/kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+gcc -m32 -c drivers/keyboard.c -o obj/keyboard.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+gcc -m32 -c include/utils.c -o obj/utils.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 echo "Finished"
-echo
 
 #linking the kernel with kernel.o and boot.o files
 echo "Linking..."
-echo
-ld -m elf_i386 -T linker.ld kernel.o boot.o -o MyOS.bin -nostdlib
-echo
+ld -m elf_i386 -T linker.ld obj/kernel.o obj/keyboard.o obj/utils.o obj/boot.o -o MWOS.bin -nostdlib
 echo "Finished"
-echo
 
-#check MyOS.bin file is x86 multiboot file or not
-# multiboot /boot/MyOS.bin
+#check .bin file is x86 multiboot file or not
+# multiboot /boot/.bin
 echo "Building..."
-echo
-grub-file --is-x86-multiboot MyOS.bin
+grub-file --is-x86-multiboot MWOS.bin
 
 #building the iso file
 mkdir -p isodir/boot/grub
-cp MyOS.bin isodir/boot/MyOS.bin
+cp MWOS.bin isodir/boot/MWOS.bin
 cp grub.cfg isodir/boot/grub/grub.cfg
-grub-mkrescue -o MyOS.iso isodir
-echo
+grub-mkrescue -o MWOS.iso isodir
 echo "Finished"
-echo
 
 #run it in qemu
-qemu-system-x86_64 -cdrom MyOS.iso
+qemu-system-x86_64 -cdrom MWOS.iso

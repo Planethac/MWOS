@@ -1,4 +1,5 @@
-#include "kernel.h"
+#include "include/kernel.h"
+#include "drivers/drivers.h"
 
 //Variables
 uint32 vga_index;
@@ -42,6 +43,22 @@ void init_vga(uint8 fore_color, uint8 back_color)
   g_back_color = back_color;
 }
 
+void new()
+{
+  if(next_line_index >= 55){
+    next_line_index = 0;
+    clear_vga_buffer(&vga_buffer, g_fore_color, g_back_color);
+  }
+  vga_index = 80*next_line_index;
+  next_line_index++;
+}
+
+void print_char(char ch)
+{
+  vga_buffer[vga_index] = vga_entry(ch, g_fore_color, g_back_color);
+  vga_index++;
+}
+
 void sleep(uint32 timer_count)
 {
     while(1){
@@ -64,67 +81,12 @@ void outb(uint16 port, uint8 data)
   asm volatile("outb %0, %1" : "=a"(data) : "d"(port));
 }
 
-void print_new_line()
-{
-  if(next_line_index >= 55){
-    next_line_index = 0;
-    clear_vga_buffer(&vga_buffer, g_fore_color, g_back_color);
-  }
-  vga_index = 80*next_line_index;
-  next_line_index++;
-}
-
-//assign ascii character to video buffer
-void print_char(char ch)
-{
-  vga_buffer[vga_index] = vga_entry(ch, g_fore_color, g_back_color);
-  vga_index++;
-}
-
 //Remove last Char
-void remove_char(char ch)
+void remove_char()
 {
 	vga_index--;
-  vga_buffer[vga_index] = vga_entry(ch, g_fore_color, g_back_color);
-}
-
-uint32 strlen(const char* str)
-{
-  uint32 length = 0;
-  while(str[length])
-    length++;
-  return length;
-}
-
-uint32 digit_count(int num)
-{
-  uint32 count = 0;
-  if(num == 0)
-    return 1;
-  while(num > 0){
-    count++;
-    num = num/10;
-  }
-  return count;
-}
-
-void itoa(int num, char *number)
-{
-  int dgcount = digit_count(num);
-  int index = dgcount - 1;
-  char x;
-  if(num == 0 && dgcount == 1){
-    number[0] = '0';
-    number[1] = '\0';
-  }else{
-    while(num != 0){
-      x = num % 10;
-      number[index] = x + '0';
-      index--;
-      num = num / 10;
-    }
-    number[dgcount] = '\0';
-  }
+	char *ch = " ";
+  vga_buffer[vga_index] = vga_entry(*ch, g_fore_color, g_back_color);
 }
 
 char get_input_keycode()
@@ -137,38 +99,32 @@ char get_input_keycode()
   return ch;
 }
 
-void get_pressed()
+char get_pressed()
 {
-	return 0;
+	char ch = 0;
+  while((ch = inb(KEYBOARD_PORT)) != 0){
+    if(ch > 0)
+      return ch;
+  }
+  return ch;
+  if((ScanCode = inb(KEYBOARD_PORT) & 127) == 127){
+  	
+  } else {
+  	check = 1;
+  }
+  return check;
 }
 
-void get_released()
+char get_released()
 {
-	return 0;
-}
-
-void input()
-{
-  char ch = 0;
-  char keycode = 0;
-  char pressed = 0;
-  //print(*str);
-  do{
-  	keycode = get_input_keycode();
-		if (get_released()){
-			pressed = 0;
-		}
-   	if (pressed == 0 ){
-    	if(keycode == KEY_ENTER){
-      	print_new_line();
-      	pressed = 1;
-    	}else{
-      	ch = get_ascii_char(keycode);
-      	print_char(ch);
-      	pressed = 1;
-      }
-    }
-  }while(ch >= 0);
+	char check = 0;
+  unsigned char ScanCode = inb(0x60);     
+  if(ScanCode+0x80){
+  	check = 1;
+  } else {
+  	
+  }
+  return check;
 }
 
 void print_string(char *str)
@@ -178,22 +134,46 @@ void print_string(char *str)
     print_char(str[index]);
     index++;
   }
-  print_new_line();
 }
-
-
 void print_int(int num)
 {
   char str_num[digit_count(num)+1];
   itoa(num, str_num);
   print_string(str_num);
-  print_new_line();
+}
+
+void input(char *str)
+{
+  char ch = 0;
+  char keycode = 0;
+  char pressed = 0;
+  print_string(str);
+  do{
+  	keycode = get_input_keycode();
+   	if (pressed == 0){
+    	if(keycode == KEY_ENTER){
+      	new();
+      	pressed = 1;
+      }else if(keycode == KEY_BACKSPACE){
+      	remove_char();
+      	pressed = 1;
+    	}else{
+      	ch = get_ascii_char(keycode);
+      	print_char(ch);
+      	pressed = 1;
+      }
+    }
+    if (get_released()){
+			pressed = 0;
+		}
+  }while(ch >= 0);
 }
 
 void kernel_entry()
 {
-  init_vga(WHITE, BLACK);
+  init_vga(g_fore_color,g_back_color);
 
   print_string("Hello World!");
-  print_int(98);
+  new();
+  input(":> ");
 }

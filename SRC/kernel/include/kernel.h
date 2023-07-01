@@ -1,8 +1,6 @@
 #ifndef KERNEL_H
 #define KERNEL_H
 
-#include "keyboard.h"
-#include "char.h"
 #include "utils.h"
 
 typedef unsigned char uint8;

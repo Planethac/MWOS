@@ -38,7 +38,3 @@ void itoa(int num, char *number)
     number[dgcount] = '\0';
   }
 }
-
-
-
-

@@ -1,6 +1,10 @@
 #ifndef KEYBOARD_H
 #define KEYBOARD_H
 
+# include "types.h"
+
+extern char get_ascii_char(uint8 key_code);
+
 #define KEYBOARD_PORT 0x60
 
 #define KEY_A 0x1E
