@@ -23,6 +23,8 @@ namespace GUI
         public MainWindow()
         {
             InitializeComponent();
+            //Uri iconUri = new Uri("pack://application:spalsh.ico", UriKind.RelativeOrAbsolute);
+            //this.Icon = BitmapFrame.Create(iconUri);
         }
     }
 }

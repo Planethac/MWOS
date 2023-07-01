@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MWOS" Height="1080" Width="1920">
     <Grid>
-
+        <Image x:Name="walpaper" HorizontalAlignment="Center" Height="1080" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="1920" Source="/background.png"/>
+        <Rectangle HorizontalAlignment="Center" Height="40" Margin="0,964,0,0" Stroke="Transparent" VerticalAlignment="Bottom" Width="1920" Opacity="0.4" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
     </Grid>
 </Window>
