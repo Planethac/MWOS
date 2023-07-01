@@ -8,7 +8,7 @@ Open the Terminal, and use "sudo apt install" to install following packages:
 - GCC
 - mtools
 - grub2-common
-- etc. (look in MWOS/SRC/kernel/docs/docs.md)
+- etc. (look in docs/doc.md)
 
 ## Roadmap
 Pre-alpha: 
