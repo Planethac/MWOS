@@ -27,9 +27,22 @@ namespace quantumnt
             try
             {
                 if (path == "ls") path = ".";
+                string fullPath = "";
+                int amountParam = cmdshell.ParamPB.Length - 1;
+                int i = 1;
+                if (amountParam == 1) fullPath = path;
+                if (amountParam >= 2)
+                {
+                    fullPath = fullPath + cmdshell.ParamPB[1];
+                    while (i != amountParam)
+                    {
+                    fullPath = fullPath + " " + cmdshell.ParamPB[i + 1];
+                    i++;            
+                    }
+                }
 
-                string[] FilePath = Directory.GetFiles(path); 
-                string[] DirPath = Directory.GetDirectories(path); 
+                string[] FilePath = Directory.GetFiles(fullPath); 
+                string[] DirPath = Directory.GetDirectories(fullPath); 
 
                 foreach (string Dir in DirPath)
                 {
@@ -40,9 +53,9 @@ namespace quantumnt
                     System.Console.WriteLine(File);
                 }
             }
-            catch (System.IO.IOException)
+            catch (System.IO.IOException ex)
             {
-                System.Console.WriteLine("System.IO.IOException");
+                System.Console.WriteLine(ex.Message);
                 System.Console.WriteLine();
             }
         }
@@ -76,10 +89,12 @@ namespace quantumnt
                 Console.WriteLine("Cmd process exited with code {0}.", exitCode);
                 System.Console.WriteLine();
     
-            } catch (System.InvalidOperationException) {
-                return;
-            } catch (System.ComponentModel.Win32Exception) {
-                System.Console.WriteLine("System.ComponentModel.Win32Exception");
+            } catch (System.InvalidOperationException ex) {
+                if (ex.Message == "Cannot start process because a file name has not been provided.") return;
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine();
+            } catch (System.ComponentModel.Win32Exception ex) {
+                System.Console.WriteLine(ex.Message);
                 System.Console.WriteLine();
             }
         }
@@ -95,15 +110,33 @@ namespace quantumnt
     {
         public static void Do(string path)
         {
+            string fullPath = "";
+            int amountParam = cmdshell.ParamPB.Length - 1;
+            int i = 1;
+            if (amountParam == 1) fullPath = path;
+            if (amountParam >= 2)
+            {
+                fullPath = fullPath + cmdshell.ParamPB[1];
+                while (i != amountParam)
+                {
+                fullPath = fullPath + " " + cmdshell.ParamPB[i + 1];
+                i++;            
+                }
+            }
             try
             {
-                Directory.SetCurrentDirectory(path);
+                Directory.SetCurrentDirectory(fullPath);
                 cmdshell.cpth = Directory.GetCurrentDirectory();
             }
-            catch (System.IO.DirectoryNotFoundException)
+            catch (System.IO.DirectoryNotFoundException ex)
             {
-                System.Console.WriteLine("System.IO.DirectoryNotFoundException");
-                System.Console.WriteLine(path);
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine();
+            }
+            catch (System.ArgumentException ex)
+            {
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine();
             }
         }
     }

@@ -11,6 +11,8 @@ namespace quantumnt
 
         public static string exepth = System.Reflection.Assembly.GetExecutingAssembly().Location;
         public static string cpth = System.IO.Path.GetDirectoryName(exepth);
+        public static string InputPB = "";
+        public static string[] ParamPB  = {""};
         public static void Main()
         {
             System.Console.WriteLine("QUANTUMNT VER 0.0.1");
@@ -19,23 +21,25 @@ namespace quantumnt
             {
                 Console.Write("{0}> ", cpth);
                 string Input = Console.ReadLine();
-                string[] param  = Input.Split(' ');
-                string Command = param[0];
+                string[] param = Input.Split(' ');
+                InputPB = Input;
+                ParamPB = param;
+                string Command = ParamPB[0];
                 string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd" };
 
                 if(SystemCommand.Contains(Command)) {
                     int CommandID = CommandDotCom.RunSysBin(Command);
                     try
                     {
-                        Functions.ExecuteSystemCommand(CommandID, param[1]);
+                        Functions.ExecuteSystemCommand(CommandID, ParamPB[1]);
                     }
                     catch (System.IndexOutOfRangeException)
                     {
                         
-                        Functions.ExecuteSystemCommand(CommandID, param[0]);
+                        Functions.ExecuteSystemCommand(CommandID, ParamPB[0]);
                     }
                 } else {
-                    ExecuteBinary.Do(param[0]);
+                    ExecuteBinary.Do(ParamPB[0]);
                 }
             }
         }
