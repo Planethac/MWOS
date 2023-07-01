@@ -7,6 +7,10 @@ namespace quantumnt
             if(CommandID == 1) {
                 System.Console.WriteLine("HELP OVERVIEW");
                 System.Console.WriteLine("HELP - Display this help menu");
+                System.Console.WriteLine("CD - Change Directory");
+                System.Console.WriteLine("LS - List Directory content");
+                System.Console.WriteLine("EXIT - Close The Shell");
+                System.Console.WriteLine("MKDIR - Make new directory");
 
                 System.Console.WriteLine();
             } else if (CommandID == 2) {
@@ -20,6 +24,10 @@ namespace quantumnt
                 System.Console.Clear();
             } else if (CommandID == 6) {
                 ChangeDirectory.Do(param);
+            } else if (CommandID == 7) {
+                MakeDirectory.Do(param);
+            } else if (CommandID == 8) {
+                RemoveDirectory.Do(param);
             }
         }
     }

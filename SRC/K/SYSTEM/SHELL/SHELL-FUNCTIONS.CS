@@ -16,6 +16,8 @@ namespace quantumnt
             if(command.ToLower() == "ls" || command.ToLower() == "dir") return 4;
             if(command.ToLower() == "clear") return 5;
             if(command.ToLower() == "cd") return 6;
+            if(command.ToLower() == "mkdir") return 7;
+            if(command.ToLower() == "rmdir") return 8;
 
             else return 0;
         }
@@ -26,7 +28,6 @@ namespace quantumnt
         {
             try
             {
-                if (path == "ls") path = ".";
                 string fullPath = "";
                 int amountParam = cmdshell.ParamPB.Length - 1;
                 int i = 1;
@@ -40,6 +41,7 @@ namespace quantumnt
                     i++;            
                     }
                 }
+                if (path == "ls") fullPath = ".";
 
                 string[] FilePath = Directory.GetFiles(fullPath); 
                 string[] DirPath = Directory.GetDirectories(fullPath); 
@@ -134,6 +136,63 @@ namespace quantumnt
                 System.Console.WriteLine();
             }
             catch (System.ArgumentException ex)
+            {
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine();
+            }
+        }
+    }
+    public static class MakeDirectory
+    {
+        public static void Do(string path)
+        {
+            string fullPath = "";
+            int amountParam = cmdshell.ParamPB.Length - 1;
+            int i = 1;
+            if (amountParam == 1) fullPath = path;
+            if (amountParam >= 2)
+            {
+                fullPath = fullPath + cmdshell.ParamPB[1];
+                while (i != amountParam)
+                {
+                fullPath = fullPath + " " + cmdshell.ParamPB[i + 1];
+                i++;            
+                }
+            }
+            try
+            {
+                Directory.CreateDirectory(fullPath);
+            }
+            catch (System.UnauthorizedAccessException ex)
+            {
+                
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine();
+            }
+        }
+    }
+    public static class RemoveDirectory
+    {
+        public static void Do(string path)
+        {
+            string fullPath = "";
+            int amountParam = cmdshell.ParamPB.Length - 1;
+            int i = 1;
+            if (amountParam == 1) fullPath = path;
+            if (amountParam >= 2)
+            {
+                fullPath = fullPath + cmdshell.ParamPB[1];
+                while (i != amountParam)
+                {
+                fullPath = fullPath + " " + cmdshell.ParamPB[i + 1];
+                i++;            
+                }
+            }
+            try
+            {
+                Directory.Delete(fullPath);
+            }
+            catch (System.UnauthorizedAccessException ex)
             {
                 System.Console.WriteLine(ex.Message);
                 System.Console.WriteLine();
