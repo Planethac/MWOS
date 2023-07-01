@@ -99,6 +99,9 @@ namespace quantumnt
             } catch (System.ComponentModel.Win32Exception ex) {
                 System.Console.WriteLine(ex.Message);
                 System.Console.WriteLine();
+            } catch (System.IO.IOException ex) {
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine();
             }
         }
         static void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
