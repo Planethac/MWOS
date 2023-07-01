@@ -1,3 +1,4 @@
+// Verdian is Bad coder!
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -15,6 +16,7 @@ namespace quantumnt
         public static string[] ParamPB  = {""};
         public static void Main()
         {
+            Functions.ExecuteSystemCommand(5, "", "");
             System.Console.WriteLine("QUANTUMNT VER 0.0.1");
             System.Console.WriteLine("© BigPO, Planethac");
             while (true)
@@ -25,18 +27,24 @@ namespace quantumnt
                 InputPB = Input;
                 ParamPB = param;
                 string Command = ParamPB[0];
-                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver" };
+                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver", "cat", "rm", "mv", "cp" };
 
                 if(SystemCommand.Contains(Command)) {
                     int CommandID = CommandDotCom.RunSysBin(Command);
                     try
                     {
-                        Functions.ExecuteSystemCommand(CommandID, ParamPB[1]);
+                        Functions.ExecuteSystemCommand(CommandID, ParamPB[1], ParamPB[2]);
                     }
                     catch (System.IndexOutOfRangeException)
                     {
-                        
-                        Functions.ExecuteSystemCommand(CommandID, ParamPB[0]);
+                        try
+                        {
+                            Functions.ExecuteSystemCommand(CommandID, ParamPB[1], "");
+                        }
+                        catch (System.Exception)
+                        {
+                            Functions.ExecuteSystemCommand(CommandID, ParamPB[0], "");
+                        }    
                     }
                 } else {
                     ExecuteBinary.Do(ParamPB[0]);

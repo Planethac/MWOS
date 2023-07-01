@@ -2,7 +2,7 @@ namespace quantumnt
 {
     public static class Functions
     {
-        public static void ExecuteSystemCommand(int CommandID, string param)
+        public static void ExecuteSystemCommand(int CommandID, string param, string param2)
         {
             if(CommandID == 1) {
                 System.Console.WriteLine("HELP OVERVIEW");
@@ -13,6 +13,9 @@ namespace quantumnt
                 System.Console.WriteLine("MKDIR - Make new directory");
                 System.Console.WriteLine("CLEAR- Clear The Output");
                 System.Console.WriteLine("MWVER - Diplay MWOS Version");
+                System.Console.WriteLine("RMDIR - remove directory");
+                System.Console.WriteLine("CAT - create directory");
+                System.Console.WriteLine("MV - Move a file ore directory");
 
                 System.Console.WriteLine();
             } else if (CommandID == 2) {
@@ -39,6 +42,12 @@ namespace quantumnt
                 System.Console.WriteLine();
                 System.Console.WriteLine("MWOS VER 0.0.1");
                 System.Console.WriteLine("© BigPO, Planethac");
+            } else if (CommandID == 10) {
+                CreateFile.Do(param);
+            } else if (CommandID == 11) {
+                RemoveFile.Do(param);
+            } else if (CommandID == 12) {
+                MoveDirectoryOrFile.Do(param, param2);
             }
         }
     }
