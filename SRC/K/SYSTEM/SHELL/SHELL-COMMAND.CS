@@ -11,6 +11,8 @@ namespace quantumnt
                 System.Console.WriteLine("LS - List Directory content");
                 System.Console.WriteLine("EXIT - Close The Shell");
                 System.Console.WriteLine("MKDIR - Make new directory");
+                System.Console.WriteLine("CLEAR- Clear The Output");
+                System.Console.WriteLine("MWVER - Diplay MWOS Version");
 
                 System.Console.WriteLine();
             } else if (CommandID == 2) {
@@ -28,6 +30,15 @@ namespace quantumnt
                 MakeDirectory.Do(param);
             } else if (CommandID == 8) {
                 RemoveDirectory.Do(param);
+            } else if (CommandID == 9) {
+                System.Console.WriteLine("------- MWOS -------");
+                System.Console.WriteLine("The glorius MWOS de-");
+                System.Console.WriteLine("veolepment Team:");
+                System.Console.WriteLine("BigPO - Kernel");
+                System.Console.WriteLine("Planethac - Shell");
+                System.Console.WriteLine();
+                System.Console.WriteLine("MWOS VER 0.0.1");
+                System.Console.WriteLine("© BigPO, Planethac");
             }
         }
     }

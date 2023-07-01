@@ -18,6 +18,7 @@ namespace quantumnt
             if(command.ToLower() == "cd") return 6;
             if(command.ToLower() == "mkdir") return 7;
             if(command.ToLower() == "rmdir") return 8;
+            if(command.ToLower() == "mwver") return 9;
 
             else return 0;
         }
