@@ -27,7 +27,7 @@ namespace quantumnt
                 InputPB = Input;
                 ParamPB = param;
                 string Command = ParamPB[0];
-                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver", "cat", "rm", "mv", "cp" };
+                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver", "cat", "rm", "mv", "cp", "gui" };
 
                 if(SystemCommand.Contains(Command)) {
                     int CommandID = CommandDotCom.RunSysBin(Command);

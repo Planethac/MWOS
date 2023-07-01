@@ -87,7 +87,7 @@ namespace quantumnt
             }
             try
             {
-                File.Create(fullPath);
+                File.Create(fullPath).Close();
             }
             catch (System.UnauthorizedAccessException ex)
             {

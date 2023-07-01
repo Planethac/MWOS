@@ -50,6 +50,8 @@ namespace quantumnt
                 MoveDirectoryOrFile.Do(param, param2);
             } else if (CommandID == 13) {
                 CopyDirectoryOrFile.Do(param, param2);
+            } else if (CommandID == 14) {
+                LaunchUI.Do();
             }
         }
     }

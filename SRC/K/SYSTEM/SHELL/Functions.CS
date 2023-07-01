@@ -23,6 +23,7 @@ namespace quantumnt
             if(command.ToLower() == "rm") return 11;
             if(command.ToLower() == "mw") return 12;
             if(command.ToLower() == "cp") return 13;
+            if(command.ToLower() == "gui") return 14;
 
             else return 0;
         }
@@ -148,6 +149,15 @@ namespace quantumnt
                 System.Console.WriteLine(ex.Message);
                 System.Console.WriteLine();
             }
+        }
+    }
+    public static class LaunchUI
+    {
+        public static void Do()
+        {
+            Process gui = new Process();
+            gui.StartInfo.FileName = @"..\GUI\gui.exe";
+            gui.Start();
         }
     }
 }
