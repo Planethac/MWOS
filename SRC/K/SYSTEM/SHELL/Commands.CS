@@ -48,6 +48,8 @@ namespace quantumnt
                 RemoveFile.Do(param);
             } else if (CommandID == 12) {
                 MoveDirectoryOrFile.Do(param, param2);
+            } else if (CommandID == 13) {
+                CopyDirectoryOrFile.Do(param, param2);
             }
         }
     }

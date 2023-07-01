@@ -22,6 +22,7 @@ namespace quantumnt
             if(command.ToLower() == "cat") return 10;
             if(command.ToLower() == "rm") return 11;
             if(command.ToLower() == "mw") return 12;
+            if(command.ToLower() == "cp") return 13;
 
             else return 0;
         }

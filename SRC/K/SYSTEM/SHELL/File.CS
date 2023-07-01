@@ -213,13 +213,26 @@ namespace quantumnt
             {
                 if (Directory.Exists(fullPath))
                 {
-                    
+                    try
+                    {
+                        cp.CopyDirectory(fullPath, fullLocation, true);
+                    }
+                    catch (System.Exception)
+                    {
+                        
+                        throw;
+                    }        
                 }
             }
-            catch (System.Exception)
+            catch (System.UnauthorizedAccessException ex)
             {
-                
-                throw;
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine();
+            }
+            catch (System.IO.IOException ex)
+            {
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine();
             }
         }
     }
