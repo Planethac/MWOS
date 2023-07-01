@@ -13,19 +13,21 @@ Open the Terminal, and use "sudo apt install" to install following packages:
 ## Roadmap
 Pre-alpha: 
 
-  -Code the coreOS (krnl, libc +.net, command.exe, bootloader, drivers, afs, DOOM, ntlogon.exe)
+  -Code the coreOS (.net, command.exe, drivers, afs, DOOM, ntlogon.exe)
 
   -Make the kernel support 64 bit protected mode with multiuser multitasking
 
   -Build cli tools
 
-  -Add support for Kotl PPC64le and MacPPC(64)
+  -Add support for PPC64le and MacPPC(64)
 
 Alpha:
 
   -Make Desktop Enviroment
   
   -Build GUI apps and drivers
+
+  -Lock K:\System so no one can f up anything
   
 Beta:
 
@@ -33,13 +35,11 @@ Beta:
   
   -Add Networking
 
-  -Add the subscription/activation manager in the kernel (No more pirated Kotl Enterprise MWOS😘 )
+  -Add the subscription/activation manager
 
   -Compile/port more programs to the OS
 
 RC X:
-
-  -Lock K:\System so no one can f up anything
   
   -Fix bugs before final release
 

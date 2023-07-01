@@ -22,15 +22,17 @@ Prints the Integer int.
 
     print_int(int);
 
-No need to call these.
+Goes to the next line
 
     print_new_line();
 
-Returns the length of a string.
+Prints a char to the VGA
 
     print_char();
 
 ## Utility
+
+Returns the length of a string.
 
     strlen(str);
 
@@ -46,7 +48,7 @@ Converts your dear int into a string.
 
 - Ubuntu (or any Linux Distro)
 
-- Install packages below with "sudo apt install <package>" from within Ubuntu
+- Install packages below with "sudo apt install <package>" from within Distro
 
 - GCC
 
@@ -55,6 +57,8 @@ Converts your dear int into a string.
 - grub2-common:i386
 
 - mtools
+
+- binutils
 
 ## Install Manually
 
