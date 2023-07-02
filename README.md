@@ -1,4 +1,7 @@
 ### MWOS
+## INFO
+If you have any questions or want to help the project join our discord:
+https://discord.gg/uCcDTBjk6D
 ## How to build
 
 Easiest to Build on Ubuntu.
