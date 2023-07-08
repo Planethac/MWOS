@@ -19,3 +19,4 @@ C:\MWOS\SRC\K\SYSTEM\GUI\obj\Debug\net7.0-windows\refint\GUI.dll
 C:\MWOS\SRC\K\SYSTEM\GUI\obj\Debug\net7.0-windows\GUI.pdb
 C:\MWOS\SRC\K\SYSTEM\GUI\obj\Debug\net7.0-windows\GUI.genruntimeconfig.cache
 C:\MWOS\SRC\K\SYSTEM\GUI\obj\Debug\net7.0-windows\ref\GUI.dll
+C:\MWOS\SRC\K\SYSTEM\GUI\obj\Debug\net7.0-windows\GUI.csproj.ResolveComReference.cache

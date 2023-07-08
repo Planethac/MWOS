@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="MWOS" Height="1080" Width="1920">
     <Grid>
-        <Image x:Name="walpaper" HorizontalAlignment="Center" Height="1080" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="1920" Source="/background.png"/>
-        <Rectangle HorizontalAlignment="Center" Height="40" Margin="0,964,0,0" Stroke="Transparent" VerticalAlignment="Bottom" Width="1920" Opacity="0.4" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+        <Image x:Name="walpaper" HorizontalAlignment="Center" Height="1080" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="1920" Source="/background.png" Visibility="Visible"/>
+        <Rectangle HorizontalAlignment="Center" Height="40" Margin="0,1024,0,0" Stroke="Transparent" VerticalAlignment="Bottom" Width="1920" Opacity="0.4" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" Visibility="Visible"/>
+        <TextBlock x:Name="clockText" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="White" Text="20:00:00" Margin="1810,1024,0,0"/>
+        <TextBox x:Name="outputTextBox" TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" Margin="79,63,1022,504" />
+        <Button Content="Run Program" Click="RunProgram_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20"/>
     </Grid>
 </Window>
