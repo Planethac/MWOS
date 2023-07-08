@@ -98,7 +98,7 @@ namespace quantumnt
                 System.Console.WriteLine();
     
             } catch (System.InvalidOperationException ex) {
-                if (ex.Message == "Cannot start process because a file name has not been provided." || ex.Message == "Der Prozess kann nicht gestartet werden, da ein Dateiname nicht angegeben wurde.") return;
+                if (ex.Message == "Cannot start process because a file name has not been provided.") return;
                 System.Console.WriteLine(ex.Message);
                 System.Console.WriteLine();
             } catch (System.ComponentModel.Win32Exception ex) {

@@ -49,16 +49,7 @@ namespace quantumnt
             } else if (CommandID == 12) {
                 MoveDirectoryOrFile.Do(param, param2);
             } else if (CommandID == 13) {
-                try
-                {
-                    CopyDirectoryOrFile.Do(param, param2);    
-                }
-                catch (System.IndexOutOfRangeException ex)
-                {
-                    System.Console.WriteLine("How did you manage to do this? but:");
-                    System.Console.WriteLine(ex.Message);
-                    System.Console.WriteLine();
-                }
+                CopyDirectoryOrFile.Do(param, param2);
             } else if (CommandID == 14) {
                 LaunchUI.Do();
             }

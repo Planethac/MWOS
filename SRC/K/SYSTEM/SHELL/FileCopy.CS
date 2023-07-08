@@ -10,9 +10,7 @@ namespace quantumnt
     {
             public static void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
             {
-                try
-                {
-                    // Get information about the source directory
+            // Get information about the source directory
             var dir = new DirectoryInfo(sourceDir);
 
             // Check if the source directory exists
@@ -40,13 +38,7 @@ namespace quantumnt
                     string newDestinationDir = Path.Combine(destinationDir, subDir.Name);
                     CopyDirectory(subDir.FullName, newDestinationDir, true);
                 }
-            }   
-                }
-                catch (System.IndexOutOfRangeException ex)
-                {
-                    System.Console.WriteLine(ex.Message);
-                    System.Console.WriteLine();
-                }
+            }
         }
     }
 }

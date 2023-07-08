@@ -8,7 +8,8 @@
     "net7.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\plane\\.nuget\\packages\\": {}
+    "C:\\Users\\delme\\.nuget\\packages\\": {},
+    "E:\\Appliactions\\VisualStudio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -16,16 +17,23 @@
       "projectUniqueName": "C:\\MWOS\\SRC\\K\\SYSTEM\\GUI\\GUI.csproj",
       "projectName": "GUI",
       "projectPath": "C:\\MWOS\\SRC\\K\\SYSTEM\\GUI\\GUI.csproj",
-      "packagesPath": "C:\\Users\\plane\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\delme\\.nuget\\packages\\",
       "outputPath": "C:\\MWOS\\SRC\\K\\SYSTEM\\GUI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "E:\\Appliactions\\VisualStudio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\plane\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\delme\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -62,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
