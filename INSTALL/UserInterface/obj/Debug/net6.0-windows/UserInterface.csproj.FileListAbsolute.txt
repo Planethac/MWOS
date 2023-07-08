@@ -1,0 +1,17 @@
+C:\MWOS\INSTALL\UserInterface\bin\Debug\net6.0-windows\UserInterface.exe
+C:\MWOS\INSTALL\UserInterface\bin\Debug\net6.0-windows\UserInterface.deps.json
+C:\MWOS\INSTALL\UserInterface\bin\Debug\net6.0-windows\UserInterface.runtimeconfig.json
+C:\MWOS\INSTALL\UserInterface\bin\Debug\net6.0-windows\UserInterface.dll
+C:\MWOS\INSTALL\UserInterface\bin\Debug\net6.0-windows\UserInterface.pdb
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\UserInterface.csproj.AssemblyReference.cache
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\UserInterface.Form1.resources
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\UserInterface.csproj.GenerateResource.cache
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\UserInterface.GeneratedMSBuildEditorConfig.editorconfig
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\UserInterface.AssemblyInfoInputs.cache
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\UserInterface.AssemblyInfo.cs
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\UserInterface.csproj.CoreCompileInputs.cache
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\UserInterface.dll
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\refint\UserInterface.dll
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\UserInterface.pdb
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\UserInterface.genruntimeconfig.cache
+C:\MWOS\INSTALL\UserInterface\obj\Debug\net6.0-windows\ref\UserInterface.dll
