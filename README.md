@@ -20,7 +20,7 @@ Open the Terminal, and use "sudo apt install" to install following packages:
 ## Roadmap
 Pre-alpha: 
 
-  -Code the coreOS (.net, command.exe, drivers, afs, DOOM, ntlogon.exe)
+  -Code the coreOS (.net, command.exe, drivers, afs, DOOM, ntlogon.exe and check that systems work with it)
 
   -Make the kernel support 64 bit protected mode with multiuser multitasking
 
