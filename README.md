@@ -1,4 +1,5 @@
 ### MWOS
+Yeah this shit kinda dead aint it?
 ## INFO
 If you have any questions or want to help the project join our discord:
 https://discord.gg/uCcDTBjk6D
