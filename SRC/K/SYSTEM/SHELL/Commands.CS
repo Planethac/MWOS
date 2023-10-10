@@ -1,3 +1,9 @@
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 namespace quantumnt
 {
     public static class Functions
@@ -52,6 +58,8 @@ namespace quantumnt
                 CopyDirectoryOrFile.Do(param, param2);
             } else if (CommandID == 14) {
                 LaunchUI.Do();
+            } else if (CommandID == 15) {
+                ExecuteBinary.Do(param);
             }
         }
     }

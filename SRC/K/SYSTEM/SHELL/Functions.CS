@@ -24,6 +24,7 @@ namespace quantumnt
             if(command.ToLower() == "mw") return 12;
             if(command.ToLower() == "cp") return 13;
             if(command.ToLower() == "gui") return 14;
+            if(command.ToLower() == "run") return 15;
 
             else return 0;
         }
@@ -160,4 +161,5 @@ namespace quantumnt
             gui.Start();
         }
     }
+
 }

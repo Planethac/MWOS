@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = shell
-build_property.ProjectDir = c:\MWOS\SRC\K\SYSTEM\SHELL\
+build_property.ProjectDir = C:\MWOS\SRC\K\SYSTEM\SHELL\

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WDUH8KQiy4yKKsPcn9vqbc9ulFUC/pwPdCiPjwjRhRFtgnXOci9IZLM1fqiyg2DCTT8y62gZ430ipPnDYAO2Dg==",
+  "dgSpecHash": "DaDakwAqoJlknDdUBoCufFIz19mpFvjA5pbI1UPNUxCPTI0r3m1/mGGeVD43zakL80Kr5NBr2cpDVOHZZUI9rg==",
   "success": true,
-  "projectFilePath": "c:\\MWOS\\SRC\\K\\SYSTEM\\SHELL\\shell.csproj",
+  "projectFilePath": "C:\\MWOS\\SRC\\K\\SYSTEM\\SHELL\\shell.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
