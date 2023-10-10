@@ -20,7 +20,7 @@ Open the Terminal, and use "sudo apt install" to install following packages:
 ## Roadmap
 Pre-alpha: 
 
-  -Code the coreOS (.net, command.exe, drivers, afs, DOOM, ntlogon.exe)
+  -Code the coreOS (.net, command.exe, drivers, afs, DOOM, ntlogon.exe and check that systems work with it)
 
   -Make the kernel support 64 bit protected mode with multiuser multitasking
 
@@ -53,3 +53,6 @@ RC X:
 RTM:
 
   -Sell and/or distribuite the OS to Enterprises and user respectively
+  ### Programs
+  The GUI Programs are in a different repository, under the Kotl Public License 1.0.
+  [Here is the link to the repository](https://github.com/Kotldotorg/quantum-nt-programs)

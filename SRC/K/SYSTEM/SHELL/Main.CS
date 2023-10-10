@@ -16,7 +16,7 @@ namespace quantumnt
         public static void Main()
         {
             Functions.ExecuteSystemCommand(5, "", "");
-            System.Console.WriteLine("QUANTUMNT VER 0.0.1");
+            System.Console.WriteLine("MWOS VER 0.0.1");
             System.Console.WriteLine("© BigPO, Planethac");
             while (true)
             {
