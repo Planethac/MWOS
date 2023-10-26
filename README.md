@@ -54,6 +54,3 @@ RC X:
 RTM:
 
   -Sell and/or distribuite the OS to Enterprises and user respectively
-  ### Programs
-  The GUI Programs are in a different repository, under the Kotl Public License 1.0.
-  [Here is the link to the repository](https://github.com/Kotldotorg/quantum-nt-programs)
