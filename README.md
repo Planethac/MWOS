@@ -2,21 +2,14 @@
 Yeah this shit kinda dead aint it?
 ## INFO
 If you have any questions or want to help the project join our discord:
-https://discord.gg/uCcDTBjk6D
+https://discord.gg/uCcDTBjk6D (Deleted)
 
-### License
-This project is open source an its code can be used in other open source projects any use in closed source projects is illegal!
 
 ## How to build
 
-Easiest to Build on Ubuntu.
+Just don't. It's a mess of a project, and a failed one too
 
-Open the Terminal, and use "sudo apt install" to install following packages:
-
-- GCC
-- mtools
-- grub2-common
-- etc. (look in docs/doc.md)
+is it?
 
 ## Roadmap
 Pre-alpha: 
@@ -43,17 +36,9 @@ Beta:
   
   -Add Networking
 
-  -Add the subscription/activation manager
-
   -Compile/port more programs to the OS
 
 RC X:
   
   -Fix bugs before final release
 
-RTM:
-
-  -Sell and/or distribuite the OS to Enterprises and user respectively
-  ### Programs
-  The GUI Programs are in a different repository, under the Kotl Public License 1.0.
-  [Here is the link to the repository](https://github.com/Kotldotorg/quantum-nt-programs)
