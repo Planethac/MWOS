@@ -8,6 +8,7 @@ https://discord.gg/uCcDTBjk6D (Deleted)
 ## How to build
 
 Just don't. It's a mess of a project, and a failed one too
+
 is it?
 
 ## Roadmap
