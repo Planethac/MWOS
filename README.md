@@ -4,8 +4,6 @@ Yeah this shit kinda dead aint it?
 If you have any questions or want to help the project join our discord:
 https://discord.gg/uCcDTBjk6D (Deleted)
 
-### License
-This project is open source an its code can be used in other open source projects any use in closed source projects is illegal!
 
 ## How to build
 
