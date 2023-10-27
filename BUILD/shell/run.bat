@@ -1,2 +1,3 @@
-@ehco off
-..\..\src\k\system\shell\shell.exe
+@echo off
+cd ..\..\src\k\system\shell\
+shell.exe
