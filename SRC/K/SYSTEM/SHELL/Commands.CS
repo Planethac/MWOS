@@ -2,12 +2,20 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 namespace quantumnt
 {
     public static class Functions
     {
+        public static void ExecuteSystemFormatCommand(int CommandID, string param, string param2)
+        {
+            if(CommandID == 1)
+            {
+                DiskIE.foramtDrive();
+            }
+        }
         public static void ExecuteSystemCommand(int CommandID, string param, string param2)
         {
             if(CommandID == 1) {
@@ -62,6 +70,8 @@ namespace quantumnt
                 ExecuteBinary.Do(param);
             } else if (CommandID == 16) {
                 DiskIE.drvHelp(param);
+            } else if (CommandID == 17) {
+                DiskIE.diskfpm();
             }
         }
     }

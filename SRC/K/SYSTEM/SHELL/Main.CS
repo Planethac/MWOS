@@ -27,7 +27,7 @@ namespace quantumnt
                 InputPB = Input;
                 ParamPB = param;
                 string Command = ParamPB[0];
-                string[] SystemCommand = { "help", "driveinfo", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver", "cat", "rm", "mv", "cp", "gui", "run" };
+                string[] SystemCommand = { "help", "driveinfo", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver", "cat", "rm", "mv", "cp", "gui", "run", "diskfpm" };
                 if(SystemCommand.Contains(Command)) {
                     int CommandID = CommandDotCom.RunSysBin(Command);
                     try
@@ -51,7 +51,7 @@ namespace quantumnt
 
         public static void Startup()
         {
-            string[] SystemCommand = { "help", "driveinfo", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver", "cat", "rm", "mv", "cp", "gui", "run" };
+            string[] SystemCommand = { "help", "diskfpm", "driveinfo", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver", "cat", "rm", "mv", "cp", "gui", "run" };
             StreamReader au = new StreamReader("../../CONFIGURATION/boot.cfg");
             string line = au.ReadLine();
             while (line != null)

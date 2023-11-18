@@ -59,5 +59,70 @@ namespace quantumnt
                 ligmabals++;
             }
         }
+        public static string InputPB = "";
+        public static string[] ParamPB  = {""};
+        public static string exepth = System.Reflection.Assembly.GetExecutingAssembly().Location;
+        public static string cpth = System.IO.Path.GetDirectoryName(exepth);
+
+        public static int exit = 0;
+        public static void diskfpm()
+        {
+            while (exit != 1)
+            {
+                Console.Write("DISKFPM> ");
+                string Input = Console.ReadLine();
+                string[] param = Input.Split(' ');
+                InputPB = Input;
+                ParamPB = param;
+                string Command = ParamPB[0];
+                string[] SystemCommand = { "for", "format" };
+                if(SystemCommand.Contains(Command)) {
+                    int CommandID = CommandDotCom.RunForBin(Command);
+                    try
+                    {
+                        Functions.ExecuteSystemFormatCommand(CommandID, ParamPB[1], ParamPB[2]);
+                    }
+                    catch (System.IndexOutOfRangeException)
+                    {
+                        try
+                        {
+                            Functions.ExecuteSystemFormatCommand(CommandID, ParamPB[1], "");
+                        }
+                        catch (System.Exception)
+                        {
+                            Functions.ExecuteSystemFormatCommand(CommandID, ParamPB[0], "");
+                        }    
+                    }
+                } 
+            }
+        }
+
+        public static void foramtDrive()
+        {
+            Console.Clear();
+            System.Console.WriteLine("Disk Format");
+            System.Console.WriteLine("Choose Disk to Format");
+            System.Console.WriteLine();
+            
+            int DiskID = 0;    
+            foreach (DriveInfo driveInfo in allDrives)
+            {
+                
+                string volLab;
+                if (driveInfo.VolumeLabel == "")
+                {
+                    volLab = "Local Disk";
+                } else 
+                {
+                    volLab = driveInfo.VolumeLabel;
+                }
+                if (!(allDrives[DiskID].DriveType == DriveType.Network))
+                {
+                System.Console.WriteLine("[{0}]: {2} | {1}", DiskID, driveInfo.Name, volLab);
+                }
+                DiskID++;
+            }
+            Console.Write(": ");
+        }
     }
 }

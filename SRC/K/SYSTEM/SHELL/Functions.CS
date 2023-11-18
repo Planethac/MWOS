@@ -26,6 +26,13 @@ namespace quantumnt
             if(command.ToLower() == "gui") return 14;
             if(command.ToLower() == "run") return 15;
             if(command.ToLower() == "driveinfo") return 16;
+            if(command.ToLower() == "diskfpm") return 17;
+
+            else return 0;
+        }
+        public static int RunForBin(string command)
+        {
+            if(command.ToLower() == "for" || command.ToLower() == "format") return 1;
 
             else return 0;
         }
