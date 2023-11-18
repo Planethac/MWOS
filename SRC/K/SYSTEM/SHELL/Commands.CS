@@ -60,6 +60,8 @@ namespace quantumnt
                 LaunchUI.Do();
             } else if (CommandID == 15) {
                 ExecuteBinary.Do(param);
+            } else if (CommandID == 16) {
+                DiskIE.drvHelp(param);
             }
         }
     }

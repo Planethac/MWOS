@@ -16,9 +16,9 @@ namespace quantumnt
         public static void Main()
         {
             Functions.ExecuteSystemCommand(5, "", "");
-            Startup();
             System.Console.WriteLine("MWOS VER 0.0.1");
             System.Console.WriteLine("© BigPO, Planethac");
+            Startup();
             while (true)
             {
                 Console.Write("{0}> ", cpth);
@@ -27,7 +27,7 @@ namespace quantumnt
                 InputPB = Input;
                 ParamPB = param;
                 string Command = ParamPB[0];
-                string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver", "cat", "rm", "mv", "cp", "gui", "run" };
+                string[] SystemCommand = { "help", "driveinfo", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver", "cat", "rm", "mv", "cp", "gui", "run" };
                 if(SystemCommand.Contains(Command)) {
                     int CommandID = CommandDotCom.RunSysBin(Command);
                     try
@@ -51,7 +51,7 @@ namespace quantumnt
 
         public static void Startup()
         {
-            string[] SystemCommand = { "help", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver", "cat", "rm", "mv", "cp", "gui", "run" };
+            string[] SystemCommand = { "help", "driveinfo", "vista-macbook", "exit", "shutdown", "ls", "dir", "clear", "cd", "mkdir", "rmdir", "mwver", "cat", "rm", "mv", "cp", "gui", "run" };
             StreamReader au = new StreamReader("../../CONFIGURATION/boot.cfg");
             string line = au.ReadLine();
             while (line != null)

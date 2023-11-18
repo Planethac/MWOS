@@ -25,6 +25,7 @@ namespace quantumnt
             if(command.ToLower() == "cp") return 13;
             if(command.ToLower() == "gui") return 14;
             if(command.ToLower() == "run") return 15;
+            if(command.ToLower() == "driveinfo") return 16;
 
             else return 0;
         }
