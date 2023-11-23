@@ -123,6 +123,7 @@ namespace quantumnt
                 DiskID++;
             }
             Console.Write(": ");
+            string disktf = Console.ReadLine();
         }
     }
 }
